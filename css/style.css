@@ -1,0 +1,532 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Lato", sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*
+    Từ ngoài vào trong
+    Từ trên xuống dưới
+    Tổng quan đến chi tiết
+
+
+Các tips dể xây dựng 
+    1. Vị trí
+    2.Kích thước
+    3. Màu sắc
+    4. Kiểu dáng (kiểu chữ, hình tròn, vuông,...)
+*/
+
+
+/*fix bug float:left thẻ cha không ôm thẻ con*/
+.clear {
+    clear: both;
+}
+
+.text-while {
+    color: #FFF !important;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content:"";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-half {
+    width: calc(100%/2);
+}
+
+.col-third {
+    width: calc(100%/3);
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+
+.col-full {
+    width: 100%;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+#main {
+    
+}
+
+#header {
+    position: fixed;
+    height: 46px;
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav, .ulsubnav {
+    list-style: none;
+}
+
+#nav li{
+    position: relative;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav > li >a {
+    color: #FFF;
+    text-transform: uppercase; /*viết in hoa*/
+}
+
+#nav li a{
+    display: block;    
+    text-decoration: none;
+    line-height: 46px;
+    padding: 0 24px;
+}
+
+#nav li:hover .ulsubnav {
+    display: block;
+}
+
+#nav > li:hover > a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .ulsubnav {
+    min-width: 160px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #FFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-arrow-down {
+    font-size: 14px;
+}
+
+#nav .ulsubnav a {
+    color: #000;
+    padding: 0 12px;
+}
+
+#nav .ulsubnav li:hover {
+    color: #000;
+    background-color: #ccc;
+}
+
+.mobile-menu-btn {
+    display: none;
+}
+
+#header .mobile-menu-btn,
+#header .search-btn {
+    float: right;
+    padding: 0 21px;
+}
+
+
+#header .search-btn:hover {
+    background-color: #f44336;
+    cursor: pointer;
+}
+
+#header .mobile-menu-btn:hover {
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    background-color: #ccc;
+}
+
+#header .menu-icon,
+#header .search-icon {
+    font-size: 20px;
+    color: #FFF;
+    line-height: 46px;
+}
+
+/*
+Kĩ thuật ảnh nâng cao khi các ảnh khác tỉ lệ nhau
+(Mỗi lần chuyển ảnh nhấp nhô, có ảnh nâng cao thấp)  
+chiều cao luôn bằng 50% kích thước chiều rộng của chính nó
+
+*/
+
+#slider {
+    position: relative;
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('/img/chicago.jpg') top center/ cover no-repeat;
+}
+
+.text-content {
+    position: absolute;
+    bottom: 47px;
+    color: #FFF;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.text-heading {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.text-description {
+    font-weight: bolder;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-top: 25px;
+}
+
+
+
+#content .content-section {
+    max-width: 800px;
+    padding: 64px 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .section-sub-heading {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 25px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+#content .section-heading {
+    font-size: 30px;
+    text-align: center;
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px; /*Các chữ có khoảng cách xa nhau*/
+}
+
+#content .about-text {
+    margin-top: 25px;
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member-list {
+    margin-top: 48px;
+    
+}
+
+#content .member-name { 
+    font-size: 15px;
+}
+
+#content .member-img {
+    width: 150px;
+    margin-top: 15px;
+}
+
+
+/*Tour section*/
+.tour-section {
+    background-color: #000;
+}
+
+.tickets-list {
+    list-style: none;
+    background-color: #FFF;
+    margin-top: 40px;
+}
+
+.tickets-list li {
+    color: #757575;
+    padding: 11px 16px;
+    font-size: 15px;
+    border-bottom: 1px solid #ccc; 
+}
+
+.tickets-list .Sold-out {
+    background-color: #f44336;
+    color: #FFF;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.tickets-list .quantity {
+    float: right; 
+    width: 24px;
+    height: 24px;
+    background-color: #000;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+}
+
+/* place */
+.place-list {
+    margin-bottom: 48px;
+    margin-top: 32px;
+}
+
+.place-img {
+    width: 100%;   
+    display: block; 
+}
+
+.place-img:hover {
+    opacity: 0.6;
+}
+
+.place-body {
+    background-color: #FFF;
+    font-size: 15px;
+    padding: 16px;
+}
+
+.place-heading {
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: bolder;
+    -webkit-text-size-adjust: 100%;
+}
+
+.place-time {
+    padding: 15px 0px;
+    color: #757575;
+    line-height: 1.5;
+}
+
+.place-desc {
+    line-height: 1.5;
+}
+
+.place-buy-btn {
+    text-decoration: none;
+    background-color: #000;
+    color: #FFF;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.place-buy-btn:hover {
+    color: #000;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: none;
+    z-index: 1;
+}
+
+.open {
+    display: flex;
+}
+
+@keyframes modalFadeIn {
+    from {
+        top:-300px;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.modal-container {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-color: #FFF;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalFadeIn 0.4s;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    color: #FFF;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+.modal-header {
+    background-color: #009688;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 129px;
+    color: #FFF;
+}
+
+.modal-heading-icon {
+    margin-right: 16px;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-label {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+
+
+.modal-input {
+    border: 1px solid #ccc;
+    padding: 8px;
+    width: 100%;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+#buy-tickets {
+    background-color: #009688;
+    color: #FFF;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 18px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#buy-tickets:hover {
+    opacity: 0.9;
+}
+
+.modal-footer {
+    padding: 15px 0px;
+    text-align: right;
+}
+
+.modal-footer a {
+    color: #2196F3;
+}
+
+.contact-content {
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form {
+    font-size: 15px;
+}
+
+.contact-form .form-control {
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.form-submit-btn {
+    background-color: #000;
+    color: #FFF;
+    padding: 10px 16px;
+    float: right;
+}
+
+.form-submit-btn:hover {
+    background-color: #ccc;
+    color: #000;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.map-section img{
+    width: 100%;
+}
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list {
+    font-size: 24px;
+}
+
+#footer .social-list a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+}
+
+#footer .social-list a:hover {
+    color:rgba(0, 0, 0, 0.3);
+    cursor: auto;
+}
+
+#footer .copyright {
+    margin-top: 15px;
+    color:rgba(0, 0, 0, 0.6);
+}
+
+#footer .copyright a {
+    color:rgba(0, 0, 0, 0.6);
+}
